@@ -246,6 +246,7 @@ def problem3b(m, point1):
         n = 1 + (a+1)*2
         problem3a(win, point1, n)
         point1.y += 60
+        total += problem3a(win, point1, n)
 
     win.close_on_mouse_click()
     return total
