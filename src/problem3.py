@@ -240,20 +240,11 @@ def problem3b(m, point1):
     #    DIFFICULTY:      8 or 9
     #    TIME ESTIMATE:   20 to 30 minutes.
     # ------------------------------------------------------------------
-    win = rg.RoseWindow(400, 600)
+    win = rg.RoseWindow(400, 650)
     total = 0
     for a in range(m):
         n = 1 + (a+1)*2
-        for k in range(n):
-            point = rg.Point(point1.x + 20 * k, point1.y + 10 * k)
-            point2 = rg.Point(point1.x + 20 * k, point1.y + 50 + 10 * k)
-            line = rg.Line(point, point2)
-            line.thickness = 1 + 2 * k
-            if line.thickness > 12:
-                line.thickness = 13
-            line.attach_to(win)
-            win.render()
-            total += line.thickness
+        problem3a(win, point1, n)
         point1.y += 60
 
     win.close_on_mouse_click()
